@@ -1,0 +1,1 @@
+web: gunicorn ail_predict.wsgi --log-file -
