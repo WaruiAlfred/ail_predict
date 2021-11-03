@@ -16,9 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from two_factor.urls import urlpatterns as tf_urls
+# from rest_framework_simplejwt.views import (
+#     # TokenObtainPairView,
+#     TokenRefreshView,
+# )
+# from prediction.views import MyObtainTokenPairView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('prediction.urls')),
     path('',include(tf_urls)),
+    # path('api/token/', MyObtainTokenPairView.as_view(), name='token_obtain_pair'),
+    # path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
