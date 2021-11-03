@@ -46,13 +46,16 @@ As user you need to login to get bearer tokens in order to access other api endp
 .../login/
 ```
 <img src="screenshots/login.png" alt="postman">
+
 Since the tokens expire after five minutes,a user needs to refresh them.
 * Token refresh enpoint
 ```
 .../login/token/refresh/
 ```
 <img src="screenshots/token_refresh.png" alt="postman">
+
 Usage of access token: 
+
 <img src="screenshots/access.png" alt="postman">
   
 ## Known Bugs
