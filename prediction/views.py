@@ -28,7 +28,7 @@ def register(request):
 
 # predictor views
 def prediction(request):
-  return render(request,"pred/pred.html")
+  return render(request,"pred/predictor.html")
 
 
 #Users Api view
