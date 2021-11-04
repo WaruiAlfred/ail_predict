@@ -25,6 +25,12 @@ def register(request):
     form = RegistrationForm()
   return render(request,'two_factor/register.html',{"form":form})
 
+
+# predictor views
+def prediction(request):
+  return render(request,"pred/pred.html")
+
+
 #Users Api view
 class UsersView(viewsets.ModelViewSet): 
   queryset = User.objects.all()
