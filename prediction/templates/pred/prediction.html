@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 {%block content%}
 {{block.super}}
-hello this is your results
+<div class="container">
+    <div class="content">
+        {%if ans == 1 %}
+        <h2>hello this is your results {{ans}} You need to start medication</h2>
+        {% else %}
+        <h2>hello this is your results {{ans}} You're safe </h2>
+        {%endif%}
+    </div>
+
+</div>
+
 {% endblock %}

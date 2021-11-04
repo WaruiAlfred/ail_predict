@@ -6,6 +6,7 @@ from rest_framework.permissions import IsAuthenticated,AllowAny
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import generics
 from .models import User
+import joblib
 
 # Create your views here.
 def home(request): 
@@ -31,7 +32,23 @@ def prediction(request):
   return render(request,"pred/predictor.html")
 
 def result(request):
-  return render(request,"pred/prediction.html")
+  cls = joblib.load('finalized_model.sav')
+
+  lis = []
+  
+  lis.append(request.GET['Pregnancies'])
+  lis.append(request.GET['Glucose'])
+  lis.append(request.GET['BloodPressure'])
+  lis.append(request.GET['SkinThickness'])
+  lis.append(request.GET['Insulin'])
+  lis.append(request.GET['BMI'])
+  lis.append(request.GET['DiabetesPedigreeFunction'])
+  lis.append(request.GET['Age'])
+
+  ans = cls.predict([lis])
+  return render(request,"pred/prediction.html",{'ans':ans, 'lis':lis})
+
+  
 
 
 #Users Api view
