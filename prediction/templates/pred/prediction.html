@@ -3,10 +3,28 @@
 {{block.super}}
 <div class="container">
     <div class="content">
+
+        <h2>Your results are here </h2>
+        <h3>The data you entered are : {{lis}}</h3>
+
+
         {%if ans == 1 %}
-        <h2>hello this is your results {{ans}} You need to start medication</h2>
+        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+            <div class="card-header">{{user.username}}</div>
+            <div class="card-body">
+              <h5 class="card-title">{{ans}} ---> You are likely to be having Diabetes</h5>
+              <p class="card-text">Please visit health center for testing immediately</p>
+            </div>
+          </div>
+        <!-- <h3>hello this is your results {{ans}} You need to start medication</h3> -->
         {% else %}
-        <h2>hello this is your results {{ans}} You're safe </h2>
+        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+            <div class="card-header">{{user.username}}</div>
+            <div class="card-body">
+              <h5 class="card-title">{{ans}} ---> Yeey! You are free of Diabetes</h5>
+              <p class="card-text">Please stay healthy</p>
+            </div>
+        <!-- <h3>hello this is your results {{ans}} You're safe </h3> -->
         {%endif%}
     </div>
 

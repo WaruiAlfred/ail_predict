@@ -29,6 +29,10 @@ def register(request):
 
 # predictor views
 def prediction(request):
+
+  
+
+
   return render(request,"pred/predictor.html")
 
 def result(request):
