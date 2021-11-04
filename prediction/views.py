@@ -30,6 +30,9 @@ def register(request):
 def prediction(request):
   return render(request,"pred/predictor.html")
 
+def result(request):
+  return render(request,"pred/prediction.html")
+
 
 #Users Api view
 class UsersView(viewsets.ModelViewSet): 

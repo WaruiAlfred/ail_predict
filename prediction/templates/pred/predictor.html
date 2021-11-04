@@ -4,7 +4,7 @@
 <div class="container">
     <div class="content">
         <h2>Please provide the following information </h2>
-        <form action="">
+        <form action="{% url 'result' %}">
             {% csrf_token %}
             No. of Pregnancies: <input type="text"  name='Pregnancies' required> <br><br>
             Glucose: <input type="text" required name='glucose'> <br><br>

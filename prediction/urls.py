@@ -15,6 +15,7 @@ urlpatterns = [
   path('',views.home,name='home'),
   path('register/',views.register,name='register'),
   path('predictor/',views.prediction,name='predictor'),
+  path('result/',views.result,name='result'),
   path('api/',include(router.urls)),#api url
   path('login/', MyObtainTokenPairView.as_view(), name='token_obtain_pair'),
   path('login/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
