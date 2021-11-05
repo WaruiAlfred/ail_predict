@@ -1,20 +1,70 @@
 {% extends 'base.html' %}
+{% load static %}
 {%block content%}
 {{block.super}}
 <div class="container">
-    <div class="content">
-        <h2>Please provide the following information </h2>
-        <form action="{% url 'result' %}">
+    <div class="content" style= "width: 600px; margin-left: 25%; border: 1px solid rgb(167, 215, 230); background-color: lightblue;">
+        <h2 style="text-align: center;">Please provide the following information </h2>
+        <form class="p-3  shadow-none p-3 mb-5 bg-light rounded" action="{% url 'result' %}" >
             {% csrf_token %}
-            No. of Pregnancies: <input type="text"  name='Pregnancies' required> <br><br>
-            Glucose: <input type="text" required name='Glucose'> <br><br>
-            BloodPressure: <input type="text" required name='BloodPressure'> <br><br>
-            SkinThickness: <input type="text" required name='SkinThickness'> <br><br>
-            Insulin: <input type="text" required name='Insulin'> <br><br>
-            BMI: <input type="text" required name='BMI'> <br><br>
-            DiabetesPedigreeFunction: <input type="text" required name='DiabetesPedigreeFunction'> <br><br>
-            Age: <input type="text" required name='Age'> <br><br>
 
+            <div class="form-group">
+                <label>
+                    No of Pregnancies
+                </label>
+                <input type="text"  name='Pregnancies' required class = " form-control">
+                
+            </div>
+            <div class="form-group">
+                <label>
+                    Glucose:
+                </label>
+                <input type="text" required name='Glucose' class = " form-control">
+                
+            </div>
+            <div class="form-group">
+                <label>
+                    BloodPressure:
+                </label>
+                <input type="text" required name='BloodPressure' class = " form-control">
+                
+            </div>
+            <div class="form-group">
+                <label>
+                    SkinThickness:
+                </label>
+                <input type="text" required name='SkinThickness' class = " form-control"> 
+                
+            </div>
+            <div class="form-group">
+                <label>
+                    Insulin:
+                </label>
+                <input type="text" required name='Insulin' class = " form-control"> 
+                
+            </div>
+            <div class="form-group">
+                <label>
+                    BMI:
+                </label>
+                <input type="text" required name='BMI' class = " form-control">
+                
+            </div>
+            <div class="form-group">
+                <label>
+                    DiabetesPedigreeFunction:
+                </label>
+                <input type="text" required name='DiabetesPedigreeFunction' class = " form-control"> 
+                
+            </div>
+            <div class="form-group">
+                <label>
+                    Age:
+                </label>
+                <input type="text" class = " form-control mb-2" required name='Age'> 
+                
+            </div>
+         
             <input type="submit" value="submit" name="">
 
                                 

@@ -22,6 +22,12 @@ class Diabetes(models.Model):
   def __str__(self):
     self.user.username
 
-  
+class Results(models.Model):
+  user = models.ForeignKey(User, on_delete = models.CASCADE)
+  diabetic = models.ForeignKey(Diabetes, on_delete = models.CASCADE)
+  answer = models.BooleanField(default=False)
+
+  def __str__(self):
+    self.user.username
   
 
