@@ -6,6 +6,7 @@ from rest_framework.permissions import IsAuthenticated,AllowAny
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import generics
 from .models import User
+from .email import send_welcome_email
 
 # Create your views here.
 def home(request): 
@@ -16,7 +17,10 @@ def register(request):
   if request.method == 'POST': 
     form = RegistrationForm(request.POST)
     if form.is_valid(): 
+      name = form.cleaned_data['username']
+      email = form.cleaned_data['email']
       user = form.save()
+      send_welcome_email(name,email)
       message='User created'
       return redirect('/account/login/')
     else: 
